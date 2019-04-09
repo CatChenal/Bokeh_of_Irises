@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<!--
+    Variables to pass:
+    CDN_CSS        #: list of comps css
+    CDN_JS         #: list of comps js
+    COMPON_SCRIPT  #::script from components(plot)
+    PAGE_TITLE
+    H1_TITLE
+    COMPON_DIV     #::div from components(plot)
+    
+<author catchenal@gmail.com>    
+-->
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    {% for cdnCSS in CDN_CSS %}
+        <link href="{{ cdnCSS }}"
+              rel="stylesheet" type="text/css" />
+    {% endfor %}
+    
+    {% for cdnJS in CDN_JS %}
+        <script src="{{ cdnJS }}"></script>
+    {% endfor %}
+    
+    <!-- INSERT SCRIPT HERE -->
+    {{ COMPON_SCRIPT }}
+    
+    <title>{{ PAGE_TITLE }}</title>
+
+</head>
+    
+<body>
+
+    <h1> {{ H1_TITLE }} </h1>
+    <p> Below is what the div input creates: </p>
+       
+    <!-- INSERT DIVS HERE -->
+    {{ COMPON_DIV }}
+
+</body>
+</html>
